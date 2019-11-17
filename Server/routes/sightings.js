@@ -8,6 +8,9 @@ router.get("/", async (req, res) => {
         let getQuery = `
         SELECT *
         FROM sightings
+        INNER JOIN researchers ON sightings.researcher_id = researchers.researcher_id
+        INNER JOIN species ON sightings.species_id = species.species_id
+        INNER JOIN habitats ON sightings.habitat_id = habitats.habitat_id
         `;
 
         let getAllSightings = await db.any(getQuery)

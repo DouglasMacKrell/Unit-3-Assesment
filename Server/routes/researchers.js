@@ -49,7 +49,7 @@ router.get("/:researcher_id", async (req, res) => {
 router.post("/new", async (req, res) => {
   try {
     let insertQuery = `
-    INSERT INTO researchers(name, job_title)
+    INSERT INTO researchers(researcher_name, job_title)
     VALUES ($1, $2)
     `;
 
@@ -69,7 +69,7 @@ router.post("/new", async (req, res) => {
 })
 
 router.patch("/:researcher_id", async (req, res) => {
-  if (req.body.name) {
+  if (req.body.researcher_name) {
     try {
       let updateQuery = `
       UPDATE researchers
@@ -77,7 +77,7 @@ router.patch("/:researcher_id", async (req, res) => {
       WHERE researcher_id = $2 
       `;
 
-      await db.none(updateQuery, [req.body.name, req.params.researcher_id])
+      await db.none(updateQuery, [req.body.researcher_name, req.params.researcher_id])
 
       res.status(201).json({
         status: "success",

@@ -7,14 +7,14 @@ CREATE DATABASE sealab_2021_db;
 CREATE TABLE researchers
 (
     researcher_id SERIAL PRIMARY KEY,
-    name VARCHAR(100) UNIQUE,
+    researcher_name VARCHAR(100) UNIQUE,
     job_title VARCHAR(100)
 );
 
 CREATE TABLE species
 (
     species_id SERIAL PRIMARY KEY,
-    name VARCHAR(100) UNIQUE,
+    species_name VARCHAR(100) UNIQUE,
     is_mammal BOOLEAN
 );
 
@@ -42,7 +42,7 @@ CREATE TABLE sightings
 /* SEED DATA */
 
 INSERT INTO researchers
-(name, job_title) 
+(researcher_name, job_title) 
 VALUES
 ('Mariana Aleta', 'Project Lead'),
 ('Javed', 'Senior Field Researcher'),
@@ -51,7 +51,7 @@ VALUES
 ('Ezra', 'Research Intern');
 
 INSERT INTO species
-(name, is_mammal) 
+(species_name, is_mammal) 
 VALUES
 ('Dolphin', true),
 ('Moray Eel', false),

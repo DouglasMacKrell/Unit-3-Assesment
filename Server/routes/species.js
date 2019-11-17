@@ -49,11 +49,11 @@ router.get("/:species_id", async (req, res) => {
 router.post("/new", async (req, res) => {
     try {
       let insertQuery = `
-      INSERT INTO species(name, is_mammal)
+      INSERT INTO species(species_name, is_mammal)
       VALUES ($1, $2)
       `;
       
-      await db.none(insertQuery, [req.body.name, req.body.is_mammal])
+      await db.none(insertQuery, [req.body.species_name, req.body.is_mammal])
   
       res.status(201).json({
         status: "success",

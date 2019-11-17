@@ -67,3 +67,8 @@ UNIT 3 ASSESSMENT
             * GET /sightings/habitats/:id: Get all sightings for a specific habitat.
             * POST /sightings: Add new sighting.
             * DELETE /sightings/:id: Delete single sighting.
+
+    3. CLIENT
+        1. Connect to your server, and have a website with the following functionality:
+            * Show all sightings
+            * Show all sightings from a given researcher
