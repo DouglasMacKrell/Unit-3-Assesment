@@ -31,7 +31,7 @@ const researcherCheck = async (event) => {
     let allSightings = response.data.payload
     let list = document.querySelector("#listy-mclistface")
     for (let sight of allSightings) {
-        if (sight.researcher_name === userInput) {
+        if (sight.researcher_name.toLowerCase() === userInput.toLowerCase()) {
             console.log(sight)
             let newSighting = document.createElement("li")
             newSighting.innerText = `${sight.job_title} ${sight.researcher_name} spotted a ${sight.species_name} somewhere around ${sight.category}`
@@ -51,3 +51,4 @@ const clearAlert = () => {
     let alert = document.querySelector("#alert")
     alert.innerText = ""
 }
+
