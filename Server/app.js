@@ -16,20 +16,20 @@ app.listen(port, () => {
 });
 
 /* ROUTES */
-// const animals = require('./routes/animals');
-// const habitats = require('./routes/habitats');
+const animals = require('./routes/animals');
+const habitats = require('./routes/habitats');
 const researchers = require('./routes/Researchers');
-// const sightings = require('./routes/sightings');
-// const species = require('./routes/species');
+const sightings = require('./routes/sightings');
+const species = require('./routes/species');
 const index = require('./routes/index')
 
 /* CONNECTS */
 app.use('/', index);
-// app.use('/animals', animals);
-// app.use('/habitats', habitats);
+app.use('/animals', animals);
+app.use('/habitats', habitats);
 app.use('/researchers', researchers);
-// app.use('/sightings', sightings);
-// app.use('/species', species);
+app.use('/sightings', sightings);
+app.use('/species', species);
 
 /* NO ROUTE STOP */
 app.use("*", (req, res) => {
